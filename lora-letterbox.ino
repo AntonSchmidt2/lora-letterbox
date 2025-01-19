@@ -4,16 +4,18 @@
 DisplayHandler display;
 
 void setup() {
-    Serial.begin(115200); // Board communication
-    Serial.println("Starting E-Paper Display Test");
+    Serial.begin(115200);
+    Serial.println("=== Starting Program ==="); // Clear marker for program start
 
-    // Initialize display
+    Serial.println("Initializing display...");
     display.init();
+    Serial.println("Display initialized");
     
-    // Show test message
+    Serial.println("Showing test message...");
     display.showText("Hello E-Paper!");
+    Serial.println("Text display command sent");
     
-    Serial.println("Text displayed. Check the screen!");
+    Serial.println("Setup complete!");
 }
 
 void loop() {
