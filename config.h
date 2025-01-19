@@ -2,16 +2,16 @@
 #define CONFIG_H
 
 // E-Paper Display Connections for LILYGO T3-S3 (from pinmap)
-#define EPAPER_DC       IO16    // EDP_DC_PIN IO16
-#define EPAPER_CS       IO15    // EDP_CS_PIN IO15
-#define EPAPER_SCK      IO4     // EDP_CLK_PIN IO04
-#define EPAPER_MOSI     IO11    // EDP_MOSI_PIN IO11
-#define EPAPER_RESET    IO47    // EDP_RESET_PIN IO47
-#define EPAPER_BUSY     IO48    // EDP_BUSY_PIN IO48
+#define EPAPER_DC       16    // EDP_DC_PIN IO16
+#define EPAPER_CS       15    // EDP_CS_PIN IO15
+#define EPAPER_SCK      4     // EDP_CLK_PIN IO04
+#define EPAPER_MOSI     11    // EDP_MOSI_PIN IO11
+#define EPAPER_RESET    47    // EDP_RESET_PIN IO47
+#define EPAPER_BUSY     48    // EDP_BUSY_PIN IO48
 
 // Display Settings
-#define DISPLAY_WIDTH        296     // 2.9 inch display
-#define DISPLAY_HEIGHT      128
+#define DISPLAY_WIDTH        250     // 2.9 inch display
+#define DISPLAY_HEIGHT      122
 #define DISPLAY_ROTATION     0
 
 // Debug Settings
