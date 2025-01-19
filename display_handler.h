@@ -1,28 +1,19 @@
-#ifndef DISPLAY_HANDLER_H
-#define DISPLAY_HANDLER_H
-
-#include <GxEPD2_BW.h>  // E-Paper display library
-#include "config.h"
+#include <GxEPD2_BW.h>
+#include <Fonts/FreeMonoBold9pt7b.h>  // Include the font definition
 
 class DisplayHandler {
 private:
-    // Choose the correct display class for your display
-    // This example uses a 2.9" b/w display (296x128)
     GxEPD2_BW<GxEPD2_290_T94_V2, GxEPD2_290_T94_V2::HEIGHT> display;
 
 public:
-    DisplayHandler() : display(
-        EPAPER_CS,     // CS pin
-        EPAPER_DC,     // DC pin
-        EPAPER_RESET,  // Reset pin
-        EPAPER_BUSY    // Busy pin
-    ) {}
+    // Use the correct constructor for GxEPD2_BW
+    DisplayHandler() : display(GxEPD2_290_T94_V2(EPAPER_CS, EPAPER_DC, EPAPER_RESET, EPAPER_BUSY)) {}
 
     void init() {
-        display.init(115200, true, 2, false); // Init with reset
+        display.init(115200, true, 2, false); // Initialize with baud rate and reset
         display.setRotation(DISPLAY_ROTATION);
         display.setTextColor(GxEPD_BLACK);
-        display.setFont(&FreeMonoBold9pt7b);
+        display.setFont(&FreeMonoBold9pt7b); // Set the font
     }
 
     void showText(const char* text, bool partial = true) {
@@ -31,7 +22,7 @@ public:
         } else {
             display.setFullWindow();
         }
-        
+
         display.firstPage();
         do {
             display.fillScreen(GxEPD_WHITE);
@@ -44,5 +35,3 @@ public:
         display.powerOff();
     }
 };
-
-#endif
