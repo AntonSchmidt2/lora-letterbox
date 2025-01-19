@@ -1,5 +1,7 @@
 #include <GxEPD2_BW.h>
 #include <Fonts/FreeMonoBold9pt7b.h>  // Include the font definition
+#include <config.h>
+
 
 class DisplayHandler {
 private:

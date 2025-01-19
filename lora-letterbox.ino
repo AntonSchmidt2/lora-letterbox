@@ -1,5 +1,5 @@
-#include "display_handler.h"
-#include "config.h"
+#include <display_handler.h>
+#include <config.h>
 
 DisplayHandler display;
 
