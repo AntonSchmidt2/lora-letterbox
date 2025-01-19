@@ -1,18 +1,16 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-// E-Paper Display Connections for LILYGO T3-S3
-#define EPAPER_BUSY     14    // BUSY Signal
-#define EPAPER_RESET    21    // RESET Control
-#define EPAPER_DC       7     // Data/Command Control
-#define EPAPER_CS       6     // Chip Select
-#define EPAPER_SCK      18    // SPI Clock
-#define EPAPER_MOSI     17    // SPI MOSI
-#define EPAPER_MISO     -1    // Not used for most E-paper displays
+// E-Paper Display Connections for LILYGO T3-S3 (from pinmap)
+#define EPAPER_DC       IO16    // EDP_DC_PIN IO16
+#define EPAPER_CS       IO15    // EDP_CS_PIN IO15
+#define EPAPER_SCK      IO4     // EDP_CLK_PIN IO04
+#define EPAPER_MOSI     IO11    // EDP_MOSI_PIN IO11
+#define EPAPER_RESET    IO47    // EDP_RESET_PIN IO47
+#define EPAPER_BUSY     IO48    // EDP_BUSY_PIN IO48
 
 // Display Settings
-// For 2.9 inch display. Adjust if you have a different size
-#define DISPLAY_WIDTH        296
+#define DISPLAY_WIDTH        296     // 2.9 inch display
 #define DISPLAY_HEIGHT      128
 #define DISPLAY_ROTATION     0
 
@@ -20,10 +18,9 @@
 #define DEBUG_ENABLED        true
 #define DEBUG_BAUDRATE      115200
 
-// Board-specific extra pins
-#define BUTTON_1            0     // Boot Button
-#define BUTTON_2            21    // User Button (shares with RESET)
-#define LED_PIN            16     // Onboard LED
-#define BAT_ADC            4     // Battery monitoring ADC pin
+// Board-specific pins
+#define BOOT_BUTTON         0        // Boot button
+#define RESET_BUTTON        21       // Reset button
+#define LED_PIN            16        // LED shares pin with EPAPER_DC
 
 #endif // CONFIG_H
